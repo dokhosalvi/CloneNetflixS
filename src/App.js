@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import './App.css';
 import Tmdb from './Tmdb';
 import MovieRow from './components/MovieRow';
@@ -29,8 +29,15 @@ export default () => {
   useEffect(() => {
     const scrollListner =() => {
       if(window.scrollY > 10) {
-        set
-      } 
+        setBlackHeader (true);
+      } else {
+        setBlackHeader (false);
+      }
+    }
+    window.addEventListener ('scroll', scrollListner);
+
+    return() => {
+      window.removeEventListener ('scroll', scrollListner);
     }
   }, []); 
   
