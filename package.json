@@ -1,6 +1,6 @@
 {
-  "name": "react",
-  "version": "0.0.0",
+  "name": "clonenetflixs",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@babel/runtime": "^7.15.4",
