@@ -11,7 +11,7 @@ export default () => {
   const [featuredData, setFeaturedData] = useState(null);
   const [blackHeader, setBlackHeader] = useState(false);
 
-  useEffect(()=> {
+  useEffect(() => {
     const loadAll = async () => {
       let list = await Tmdb.getHomeList();
       setMovieList(list);
@@ -27,7 +27,7 @@ export default () => {
   },[]);
   
   useEffect(() => {
-    const scrollListner =() => {
+    const scrollListner = () => {
       if(window.scrollY > 10) {
         setBlackHeader (true);
       } else {
@@ -43,17 +43,17 @@ export default () => {
   
   
   return (
-    <div className="page">
+    <div className = "page">
       
-      <Header black={blackHeader} />
+      <Header black = {blackHeader} />
 
       {featuredData &&
-        <FeaturedMovie item={featuredData} />
+        <FeaturedMovie item = {featuredData} />
       }
       
-      <section className="lists">
-        {movieList.map((item, key)=>(
-          <MovieRow key={key} title={item.title} items={item.items} />
+      <section className = "lists">
+        {movieList.map((item, key) => (
+          <MovieRow key = {key} title = {item.title} items = {item.items} />
         ))}
       </section>
     </div>

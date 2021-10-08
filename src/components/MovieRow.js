@@ -24,25 +24,25 @@ export default ({title, items}) => {
   }
   
   return(
-    <div className="movieRow">
+    <div className = "movieRow">
         <h2>{title}</h2>
 
-        <div className="movieRow--left" onClick={handleLeft}>
-            <NavigateBeforeIcon style={{fontSize: 50}}/>
+        <div className = "movieRow--left" onClick = {handleLeft}>
+            <NavigateBeforeIcon style = {{fontSize: 50}}/>
         </div>
 
-        <div className="movieRow--right" onClick={handleRight}>
-            <NavigateNextIcon style={{fontSize: 50}}/>
+        <div className = "movieRow--right" onClick = {handleRight}>
+            <NavigateNextIcon style = {{fontSize: 50}}/>
         </div>
 
-        <div className="movieRow--listArea">
-            <div className="movieRow--list" style={{
+        <div className = "movieRow--listArea">
+            <div className = "movieRow--list" style = {{
                 marginLeft: scrollX,
                 width: items.results.length * 150
             }}>
                 {items.results.length > 0 && items.results.map((item, key) =>(
-                    <div key={key} className="movieRow--item">
-                        <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} />
+                    <div key = {key} className = "movieRow--item">
+                        <img src = {`https://image.tmdb.org/t/p/w300${item.poster_path}`} />
                     </div>
                 ))}
             </div>
